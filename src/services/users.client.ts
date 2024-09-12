@@ -1,6 +1,5 @@
 import http from './client';
 
-
 export async function getUser(endpoint: string) {
 	try {
 		const response = (await http.get(endpoint)).data;
@@ -12,7 +11,7 @@ export async function getUser(endpoint: string) {
 
 export async function getUserById(endpoint: string, id: number) {
 	try {
-		const response = (await http.get(`${endpoint}?userId=${id}`)).data;
+		const response = (await http.get(`${endpoint}/${id}`)).data;
 		return response;
 	} catch (error) {
 		console.log('error', error);

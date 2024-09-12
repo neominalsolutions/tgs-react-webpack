@@ -7,6 +7,10 @@ import AboutPage from './pages/about.page';
 import AdminLayout from './layout/admin.layout';
 import UsersPage from './pages/admin/users.page';
 import UsersCardPage from './pages/admin/users.card.page';
+import LoginPage from './pages/login.page';
+
+import '@fontsource/roboto/500.css';
+import AuthGuard from './guards/auth.guard';
 
 const App = () => {
 	return <>App21 Component</>;
@@ -33,7 +37,11 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '/admin',
-		Component: AdminLayout,
+		element: (
+			<AuthGuard>
+				<AdminLayout />
+			</AuthGuard>
+		),
 		children: [
 			{
 				path: 'users',
@@ -44,6 +52,10 @@ const router = createBrowserRouter([
 				Component: UsersCardPage,
 			},
 		],
+	},
+	{
+		path: '/login',
+		Component: LoginPage,
 	},
 ]);
 
