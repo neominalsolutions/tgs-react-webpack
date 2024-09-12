@@ -11,6 +11,9 @@ import LoginPage from './pages/login.page';
 
 import '@fontsource/roboto/500.css';
 import AuthGuard from './guards/auth.guard';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import ReduxDemoPage from './pages/redux.demo';
 
 const App = () => {
 	return <>App21 Component</>;
@@ -32,6 +35,10 @@ const router = createBrowserRouter([
 			{
 				path: '/hakkimizda',
 				Component: AboutPage,
+			},
+			{
+				path: '/redux',
+				Component: ReduxDemoPage,
 			},
 		],
 	},
@@ -59,8 +66,11 @@ const router = createBrowserRouter([
 	},
 ]);
 
+// 2. adım
 root.render(
 	<>
-		<RouterProvider router={router} />
+		<Provider store={store}>
+			<RouterProvider router={router} />
+		</Provider>
 	</>
 );
