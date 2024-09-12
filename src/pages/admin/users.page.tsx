@@ -1,14 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { User } from '../../models/user.model';
 import { getUser } from '../../services/users.client';
-
-interface User {
-	id: string;
-	name: string;
-	username: string;
-	address: { city: string; street: string };
-	createdAt: Date;
-}
 
 function UsersPage() {
 	const [users, setUsers] = useState<User[]>([]);

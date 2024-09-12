@@ -6,6 +6,7 @@ import HomePage from './pages/home.page';
 import AboutPage from './pages/about.page';
 import AdminLayout from './layout/admin.layout';
 import UsersPage from './pages/admin/users.page';
+import UsersCardPage from './pages/admin/users.card.page';
 
 const App = () => {
 	return <>App21 Component</>;
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
 			{
 				path: 'users',
 				Component: UsersPage,
+			},
+			{
+				path: 'users/:id',
+				Component: UsersCardPage,
 			},
 		],
 	},
