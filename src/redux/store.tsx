@@ -2,11 +2,13 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import { counterReducer } from './slices/counter.slice';
+import { cartReducer } from './slices/cart.slice';
 
 export const store = configureStore({
 	reducer: {
-        counterState:counterReducer // 4. aşama hangi state hangi reducer yönetecek
-    },
+		cartState: cartReducer,
+		counterState: counterReducer, // 4. aşama hangi state hangi reducer yönetecek
+	},
 });
 
 export type RootState = ReturnType<typeof store.getState>;

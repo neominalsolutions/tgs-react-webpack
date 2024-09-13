@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
+import { fetchCartFromApi } from '../redux/slices/cart.slice';
+import { AppDispatch } from '../redux/store';
+import CartPage from '../pages/cart.page';
 
 function SiteLayout() {
+	const dispatch = useDispatch<AppDispatch>();
+
+	useEffect(() => {
+		dispatch(fetchCartFromApi());
+	}, []);
+
 	return (
 		<>
 			<header>
@@ -13,6 +23,9 @@ function SiteLayout() {
 			</header>
 			<main>
 				<Outlet />
+				<br></br>
+
+				<CartPage />
 			</main>
 			<footer>Alt bilgi</footer>
 		</>

@@ -23,6 +23,9 @@ const root = ReactDom.createRoot(
 	document.getElementById('root') as HTMLElement
 );
 
+
+
+
 const router = createBrowserRouter([
 	{
 		path: '/',
