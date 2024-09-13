@@ -14,6 +14,7 @@ import AuthGuard from './guards/auth.guard';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import ReduxDemoPage from './pages/redux.demo';
+import SwrDemo from './pages/swr/swr.demo';
 
 const App = () => {
 	return <>App21 Component</>;
@@ -22,9 +23,6 @@ const App = () => {
 const root = ReactDom.createRoot(
 	document.getElementById('root') as HTMLElement
 );
-
-
-
 
 const router = createBrowserRouter([
 	{
@@ -42,6 +40,10 @@ const router = createBrowserRouter([
 			{
 				path: '/redux',
 				Component: ReduxDemoPage,
+			},
+			{
+				path: '/swr',
+				Component: SwrDemo,
 			},
 		],
 	},

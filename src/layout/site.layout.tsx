@@ -17,15 +17,15 @@ function SiteLayout() {
 			<header>
 				<h1>Başlık</h1>
 				<nav>
-					<Link to="/">Anasayfa</Link> <Link to="/hakkimizda">Hakkımızda</Link>
-					<Link to="/redux">Redux Demo</Link>
+					<Link to="/">Anasayfa</Link> <Link to="/hakkimizda">Hakkımızda</Link>{' '}
+					<Link to="/redux">Redux Demo</Link> <Link to="/swr">Swr</Link>
 				</nav>
 			</header>
 			<main>
 				<Outlet />
 				<br></br>
 
-				<CartPage />
+				{/* <CartPage /> */}
 			</main>
 			<footer>Alt bilgi</footer>
 		</>
